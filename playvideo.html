@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0;padding: 0;box-sizing: border-box;outline: 0; }
+        html,body {height: 100%}
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+        }
+        .screen {
+            width: 1024px;
+            height: 768px;
+            overflow: hidden;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="screen">
+        <video width="1024" height="768" playsInline autoPlay>
+            <source src="./images/cover.mp4" type="video/mp4" />
+          </video>
+    </div>
+    <script src="./jquery.min.js"></script>
+    <script src="./jquery.touchSwipe.js"></script>
+    <script src="./app.js"></script>
+    <script>
+      $(function () {
+        $("#screen").swipe({
+          swipe: function (
+            e,
+            direction,
+          ) {
+            if (direction === "left") {
+              window.location.href = "http://127.0.0.1:8080";
+            }
+          },
+          threshold: 0,
+        });
+      });
+    </script>
+</body>
+</html>

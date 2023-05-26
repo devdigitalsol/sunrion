@@ -30,7 +30,7 @@ function Nav(WrappedComp) {
                     const gotoIndex = allSlides.findIndex(
                       (slide) => slide.text === item.text
                     );
-                    swiper.slideTo(gotoIndex + 2);
+                    swiper.slideTo(gotoIndex + 1);
                   }}
                 >
                   {item.text}
