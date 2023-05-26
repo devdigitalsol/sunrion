@@ -1,9 +1,11 @@
 import { useState } from "react";
+import Nav from "../components/Nav";
 
-export default function Page3() {
+function Page3(props) {
   const [show, setShow] = useState(false);
   return (
     <div className="screen" onClick={() => setShow(false)}>
+      {props.children}
       <div>
         <img src="images/4/images/img1.png" alt="img" />
       </div>
@@ -69,3 +71,4 @@ export default function Page3() {
     </div>
   );
 }
+export default Nav(Page3);

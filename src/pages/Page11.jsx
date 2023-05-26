@@ -1,9 +1,11 @@
 import { useState } from "react";
+import Nav from "../components/Nav";
 
-export default function Page11() {
+function Page11(props) {
   const [show, setShow] = useState(false);
   return (
     <div className="screen" onClick={() => setShow(false)}>
+      {props.children}
       <div className="flex">
         <img src="images/12/images/img1.png" alt="img" />
         <div className="absolute top-0 right-0">
@@ -44,3 +46,4 @@ export default function Page11() {
     </div>
   );
 }
+export default Nav(Page11);

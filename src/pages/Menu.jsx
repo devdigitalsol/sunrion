@@ -2,8 +2,7 @@ import { useContext, useState } from "react";
 import { pages } from "./../utils";
 import { AppContext } from "../context";
 export default function Menu() {
-  const { selectedPages, setSelectedPages, setStarSlider } =
-    useContext(AppContext);
+  const { selectedPages, setSelectedPages } = useContext(AppContext);
   const handleChange = (e, item) => {
     if (e.target.checked) {
       setSelectedPages((prev) => {

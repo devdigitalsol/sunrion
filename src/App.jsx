@@ -5,25 +5,23 @@ import SwiperCore, { Navigation, Manipulation, EffectFade } from "swiper";
 import Cover from "./pages/Cover";
 import Menu from "./pages/Menu";
 import { AppContext } from "./context";
-import Nav from "./components/Nav";
 
 SwiperCore.use([Manipulation]);
 export default function App() {
-  const [activePage, setActivePage] = useState(0);
   const swiperElRef = useRef();
   const [slides, setSlides] = useState([
     { id: "cover", page: Cover },
     { id: "menu", page: Menu },
   ]);
-  const { selectedPages } = useContext(AppContext);
+  const { selectedPages, setAllSlides } = useContext(AppContext);
   useEffect(() => {
     let result = selectedPages.map((a) => a.innerPages).flat();
+    setAllSlides(result);
     setSlides([...result]);
   }, [selectedPages]);
 
   return (
     <>
-      {activePage > 1 ? <Nav selectedPages={selectedPages} /> : ""}
       <Swiper
         ref={swiperElRef}
         slidesPerView={1}
@@ -33,9 +31,6 @@ export default function App() {
         navigation={false}
         className="mySwiper"
         modules={[Navigation, EffectFade]}
-        onActiveIndexChange={(SwiperCore) => {
-          setActivePage(SwiperCore.activeIndex);
-        }}
       >
         <SwiperSlide>
           <Cover />
