@@ -1,5 +1,6 @@
 import VIDEO from "../assets/images/cover.mp4";
 import { useSwiper } from "swiper/react";
+import VIDBG from "./../assets/poster.jpg";
 export default function Cover({ children }) {
   const swiper = useSwiper();
   return (
@@ -10,6 +11,8 @@ export default function Cover({ children }) {
         height="768"
         playsInline
         autoPlay
+        controls
+        poster={VIDBG}
         webkit-playsinline="webkit-playsinline"
         onEnded={(e) => swiper.slideTo(1)}
       >
