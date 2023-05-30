@@ -10,7 +10,7 @@ SwiperCore.use([Manipulation]);
 export default function App() {
   const swiperElRef = useRef();
   const [slides, setSlides] = useState([
-    // { id: "cover", page: Cover },
+    { id: "cover", page: Cover },
     { id: "menu", page: Menu },
   ]);
   const { selectedPages, setAllSlides } = useContext(AppContext);
@@ -32,9 +32,9 @@ export default function App() {
         className="mySwiper"
         modules={[Navigation, EffectFade]}
       >
-        {/* <SwiperSlide>
+        <SwiperSlide>
           <Cover />
-        </SwiperSlide> */}
+        </SwiperSlide>
         <SwiperSlide>
           <Menu />
         </SwiperSlide>

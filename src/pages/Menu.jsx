@@ -1,9 +1,7 @@
 import { useContext, useState } from "react";
 import { pages } from "./../utils";
 import { AppContext } from "../context";
-import { useSwiper } from "swiper/react";
 export default function Menu() {
-  const swiper = useSwiper();
   const { selectedPages, setSelectedPages } = useContext(AppContext);
   const handleChange = (e, item) => {
     if (e.target.checked) {
