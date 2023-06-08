@@ -1,4 +1,4 @@
-import VIDEO from "../assets/images/cover.mp4";
+import VIDEO from "../assets/images/cover.mp4?v1";
 import { useSwiper } from "swiper/react";
 import VIDBG from "./../assets/poster.jpg";
 export default function Cover({ children }) {
