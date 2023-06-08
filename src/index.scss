@@ -94,6 +94,14 @@ img {
     position: absolute;
     transform: scale(0);
     transition: all 0.3s ease-in-out;
+    top: -15px;
+    right: -15px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    box-shadow: 1px 2px 5px -2px rgba(0, 0, 0, 0.5);
     &.show {
       transform: scale(1);
     }
@@ -101,90 +109,46 @@ img {
   &.RIF {
     top: 80px;
     left: 427px;
-    span {
-      left: 61px;
-      top: 65px;
-    }
   }
   &.PRU {
     top: 124px;
     left: 594px;
-    span {
-      left: 20px;
-      top: 60px;
-    }
   }
   &.LA {
     top: 249px;
     left: 683px;
-    span {
-      left: 17px;
-      top: 35px;
-    }
   }
   &.LA-PLUS {
     top: 406px;
     left: 746px;
-    span {
-      left: -29px;
-      top: 9px;
-    }
   }
   &.P-IT {
     top: 521px;
     left: 698px;
-    span {
-      left: -36px;
-      top: 13px;
-    }
   }
   &.P-HP {
     top: 645px;
     left: 558px;
-    span {
-      left: -8px;
-      top: -41px;
-    }
   }
   &.PRO-HP {
     top: 645px;
     left: 257px;
-    span {
-      left: 162px;
-      top: -42px;
-    }
   }
   &.NUSAM {
     top: 505px;
     left: 145px;
-    span {
-      left: 163px;
-      top: 26px;
-    }
   }
   &.SO-LR {
     top: 406px;
     left: 65px;
-    span {
-      left: 189px;
-      top: 4px;
-    }
   }
   &.SO-IBS {
     top: 270px;
     left: 109px;
-    span {
-      left: 165px;
-      top: 10px;
-    }
   }
   &.NITREST {
     top: 132px;
     left: 229px;
-    span {
-      left: 133px;
-      top: 49px;
-    }
   }
 }
 

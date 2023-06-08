@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { pages } from "./../utils";
 import { AppContext } from "../context";
 export default function Menu() {
   const { selectedPages, setSelectedPages } = useContext(AppContext);
-  const handleChange = (e, item) => {
+  const handleChange = useCallback((e, item) => {
     if (e.target.checked) {
       setSelectedPages((prev) => {
         return [...prev, item];
@@ -14,12 +14,13 @@ export default function Menu() {
       });
       setSelectedPages(removedPage);
     }
-  };
+  });
 
   return (
     <div className="screen menuBg">
       {pages.map((item, i) => {
         const [isChecked, setIsChecked] = useState(false);
+        const findex = selectedPages.findIndex((x) => x.id === item.id);
         return (
           <label
             htmlFor={item.id}
@@ -36,7 +37,7 @@ export default function Menu() {
               }}
             />
             <img src={item.img} alt="img" />
-            <span className={isChecked ? `show` : ""}></span>
+            <span className={isChecked ? `show` : ""}>{findex + 1}</span>
           </label>
         );
       })}

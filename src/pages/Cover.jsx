@@ -11,7 +11,7 @@ export default function Cover({ children }) {
         height="768"
         playsInline
         autoPlay
-        controls
+        muted
         poster={VIDBG}
         webkit-playsinline="webkit-playsinline"
         onEnded={(e) => swiper.slideTo(1)}
