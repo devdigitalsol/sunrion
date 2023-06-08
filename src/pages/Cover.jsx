@@ -13,6 +13,7 @@ export default function Cover({ children }) {
         poster={VIDBG}
         webkit-playsinline="webkit-playsinline"
         onEnded={(e) => swiper.slideTo(1)}
+        controls
       >
         <source src={VIDEO} type="video/mp4" />
       </video>
