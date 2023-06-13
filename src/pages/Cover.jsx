@@ -1,20 +1,26 @@
+import { useEffect, useRef } from "react";
 import VIDEO from "../assets/images/cover.mp4";
-import { useSwiper } from "swiper/react";
 import VIDBG from "./../assets/poster.jpg";
-export default function Cover({ children }) {
-  const swiper = useSwiper();
+export default function Cover({ children, playvid }) {
+  const vidRef = useRef(null);
+  useEffect(() => {
+    if (playvid) {
+      vidRef.current.play();
+    } else {
+      vidRef.current.pause();
+      vidRef.current.currentTime = 0;
+    }
+  }, [playvid]);
   return (
     <div className="screen">
       {children}
       <video
+        ref={vidRef}
         playsInline
-        autoPlay
-        muted
         poster={VIDBG}
         webkit-playsinline="webkit-playsinline"
         width="1024"
         height="768"
-        onEnded={(e) => swiper.slideTo(1)}
       >
         <source src={VIDEO} type="video/mp4" />
       </video>

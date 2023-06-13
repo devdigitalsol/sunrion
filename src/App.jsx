@@ -1,13 +1,14 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
-import SwiperCore, { Navigation, Manipulation, EffectFade } from "swiper";
+import SwiperCore, { Navigation, Manipulation, EffectFade, A11y } from "swiper";
 import Cover from "./pages/Cover";
 import Menu from "./pages/Menu";
 import { AppContext } from "./context";
 
 SwiperCore.use([Manipulation]);
 export default function App() {
+  const [activeIndex, setActiveIndex] = useState(0);
   const swiperElRef = useRef();
   const [slides, setSlides] = useState([
     { id: "cover", page: Cover },
@@ -30,13 +31,14 @@ export default function App() {
         spaceBetween={0}
         navigation={false}
         className="mySwiper"
-        modules={[Navigation, EffectFade]}
+        modules={[Navigation, EffectFade, A11y]}
+        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
       >
         <SwiperSlide>
-          <Cover />
+          <Menu />
         </SwiperSlide>
         <SwiperSlide>
-          <Menu />
+          <Cover playvid={activeIndex == 1 ? true : false} />
         </SwiperSlide>
         {slides.map((slide) => {
           return <SwiperSlide key={slide.id}>{slide.page}</SwiperSlide>;
