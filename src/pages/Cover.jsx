@@ -12,8 +12,9 @@ export default function Cover({ children }) {
         muted
         poster={VIDBG}
         webkit-playsinline="webkit-playsinline"
+        width="1024"
+        height="768"
         onEnded={(e) => swiper.slideTo(1)}
-        controls
       >
         <source src={VIDEO} type="video/mp4" />
       </video>

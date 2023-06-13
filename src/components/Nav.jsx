@@ -19,7 +19,7 @@ function Nav(WrappedComp) {
               className="icon_hamburger"
               onClick={toggleMenu}
             ></button>
-            <div onClick={() => swiper.slideTo(0)} className="icon_home"></div>
+            <div onClick={() => swiper.slideTo(1)} className="icon_home"></div>
           </div>
           <div className={`nav_list `}>
             {selectedPages.map((item, i) => {

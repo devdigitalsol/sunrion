@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { pages } from "./../utils";
 import { AppContext } from "../context";
 export default function Menu() {
